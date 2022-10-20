@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import User from './api/models/User.js'
+import Book from './api/models/Book.js'
 
 //brings env variables
 dotenv.config()
@@ -21,7 +22,7 @@ mongoose.connect(
             phone:'12345678',
             role:'Client',
         })
-        console.log(user)
+       
         // User.find({
         //     name:'Juan'
         // })
@@ -36,5 +37,38 @@ mongoose.connect(
         //     name:'Juan'
         // })
         
+//TODO:
+/*  create book model
+create to book model
+        find from book
+        update book by id
+        delete by id
+
+*/
+//CRUD
+        //CREATE
+const book = await Book.create({
+    title:'Book Title',
+    editorial:'Book Editorial',
+    edition:1,
+    pageNumber:230,
+    isbn:'A-123-45b',
+    id:1
+})
+console.log(book)
+
+        //FIND
+const find= await Book.find()
+console.log(find)
+
+
+const updateByIdResult= await Book.findByIdAndUpdate(
+    '6350b31cef0515a26b988e70',
+    {
+        title:'Updated Title'
+    }
+)
+    console.log(updateByIdResult)
+
 })
 

@@ -38,9 +38,9 @@ mongoose.connect(
         // })
         
 //TODO:
-/*  create book model
-create to book model
-        find from book
+/*  create book model/Schema
+        create  model
+        find  book
         update book by id
         delete by id
 
@@ -61,7 +61,7 @@ console.log(book)
 const find= await Book.find()
 console.log(find)
 
-
+//UPDATE (by Id)
 const updateByIdResult= await Book.findByIdAndUpdate(
     '6350b31cef0515a26b988e70',
     {
